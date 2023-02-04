@@ -1,0 +1,23 @@
+<div class="p-5  text-white text-center" style="background-color: #04AA6D;">
+  <h1>Watch My Videos</h1>
+  <p>Don't Forget to like and Subscribe</p>
+</div>
+
+<div class="row justify-content-center mb-5">
+  <div class="col-5 mb-3 mt-4" *ngFor="let video of videoList">
+
+ <app-video-player [videoId]="video.id" [command]="command">
+
+ </app-video-player>
+  </div>
+
+</div>
+<div class="row  justify-content-center">
+  <div class="col-3">
+    <div class="  mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" (input)="onValueChange($event.target)" placeholder="name@example.com">
+    </div>
+
+  </div>
+</div>
