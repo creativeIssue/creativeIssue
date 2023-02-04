@@ -17,7 +17,7 @@ export class LandingComponent implements OnInit {
   public command:string;
   videoList: Video[] = [];
   constructor(private http: HttpClient,) {
-    this.http.get('assets/video-list.js').subscribe((list: []) => {
+    this.http.get('https://raw.githubusercontent.com/creativeIssue/data/main/video-list.js').subscribe((list: []) => {
       console.log("list", list)
       list?.forEach(link => {
         this.videoList.push(new Video(link))
@@ -28,10 +28,10 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
 
-    setInterval(() => {
-      if(!this.disableReload)
-      window.location.reload();
-    }, this.refreshTime)
+    // setInterval(() => {
+    //   if(!this.disableReload)
+    //   window.location.reload();
+    // }, this.refreshTime)
   }
 
   onValueChange(obj:any){
